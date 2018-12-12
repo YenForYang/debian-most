@@ -1,0 +1,12 @@
+Package: most-dbgsym
+Source: most
+Version: 5.0.0a-4
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Benjamin Mako Hill <mako@debian.org>
+Installed-Size: 80
+Depends: most (= 5.0.0a-4)
+Section: debug
+Priority: optional
+Description: debug symbols for most
+Build-Ids: d134aeed6bf31253c29b0dd2843ca7eacdbb13fc

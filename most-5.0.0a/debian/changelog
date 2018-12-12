@@ -1,0 +1,260 @@
+most (5.0.0a-4) unstable; urgency=low
+
+  * Tweaked manpage to remove macro which is invalid (and generating warnings)
+    in Debian versions of man.
+
+ -- Benjamin Mako Hill <mako@debian.org>  Sun, 25 Dec 2016 15:02:35 -0800
+
+most (5.0.0a-3) unstable; urgency=high
+
+  * lzma-support.patch:
+    - Fix CVE-2016-1253: shell injection attack when opening
+      lzma-compressed files (Closes: #848132)
+  * Added support for xv compressed file (Closes: #846465)
+
+ -- Benjamin Mako Hill <mako@debian.org>  Wed, 14 Dec 2016 18:08:56 -0800
+
+most (5.0.0a-2.5) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Use dh_autotools_dev instead of dh_autoreconf
+    as autoreconf needs a major autofoo update
+
+ -- Wookey <wookey@debian.org>  Thu, 04 Aug 2016 23:29:53 +0000
+
+most (5.0.0a-2.4) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Bump debhelper compat to 9 (Closes: #817586)
+  * Update to policy 3.9.8 (use dpkg-buildflags,
+    add build-arch/build-indep targets)
+  * Fix lintian issues (above plus missing misc:depends)
+  * Don't force $CC=gcc (breaks cross-building)
+  * Use dh_autoreconf to support new architectures
+  * Reinstate quiltification from 5.0.0a-2.2 NMU
+
+ -- Wookey <wookey@debian.org>  Fri, 22 Jul 2016 01:26:53 +0100
+
+most (5.0.0a-2.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Rebase upload on 5.0.0a-2.1 (Closes: #726164)
+  * Fix terminfo directory location, deal with ncurses package's change, see
+    Bug#678441, thanks to Hideki Yamane for the patch (Closes: #710629)
+
+ -- David Prévot <taffit@debian.org>  Tue, 15 Oct 2013 10:24:35 -0400
+
+most (5.0.0a-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/patches
+    - add terminfo-dir.patch to fix FTBFS (Closes: #710629)
+  * add debian/source/format as "3.0 (quilt)" 
+  * debian/rules
+    - move copy config.guess files target to "Build:"
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 06 Oct 2013 16:39:37 +0900
+
+most (5.0.0a-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "build fails on configure-step (couldn't find slang.h)":
+    add patch from Ubuntu / Daniel T Chen:
+    - debian/rules: Handle multiarch slang2. Fixes FTBFS.
+    Additionally, build-depend on dpkg-dev >= 1.16.0, and delete the RPATH
+    that gets introduced because the autofoo detects the "non-standard" slang
+    directory. (Closes: #643339)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 04 Dec 2011 16:01:26 +0100
+
+most (5.0.0a-2) unstable; urgency=low
+
+  * Lots of improvements to documentation.
+  * Added HOME and END to the less keybindings config. Closes: #516842
+  * Cleaned up missing and bad information on configuration file in
+    documenation. Closes: #516832
+  * Clarified use of postfix notation. Closes: #205130
+  * Fix mispelling in man page. Closes: #480649
+  * Fix regressions on color issues in man page. Closes: #375384
+  
+ -- Benjamin Mako Hill <mako@debian.org>  Sat, 23 Oct 2010 20:44:29 -0400
+
+most (5.0.0a-1) unstable; urgency=low
+
+  * New upstream release. Closes: #453439, #470659
+  * Added support for opening LZMA files. Closes: #466574
+  * Fixed stripping. Closes: #437578
+  * Fixed crashing with many carriage returns. Closes: #409737
+  * Fixed goto and goto percent. Closes: #373230
+  * Fix pseudo-quitting when viewing many files. Closes: #362526
+  * Updated policy to 3.7.3.
+
+ -- Benjamin Mako Hill <mako@debian.org>  Tue, 26 Feb 2008 21:37:34 -0500
+
+most (4.10.2-5) unstable; urgency=low
+
+  * Cleaned up the manual page. Closes: #355525, #375384
+  * Fixed autotools issues affecting a few groups. Closes: #333451
+
+ -- Benjamin Mako Hill <mako@debian.org>  Sun,  1 Apr 2007 19:40:37 -0400
+
+most (4.10.2-4) unstable; urgency=low
+
+  * Fixes bugs with tab expansions when scrolling horizontally.
+    Closes: #355353
+
+ -- Benjamin Mako Hill <mako@debian.org>  Sun,  5 Mar 2006 14:31:15 -0500
+
+most (4.10.2-3) unstable; urgency=low
+
+  * Applied additional patch from Javier Kohen (Thanks again!).
+  * Fixed minor glitches when displaying multi-byte characters.
+    Closes: #347844
+  * Fixed wrapped mode when using formatted output.
+  * Updates config.guess and config.sub. Closes: #333451
+
+ -- Benjamin Mako Hill <mako@debian.org>  Thu,  2 Mar 2006 11:43:09 -0500  
+
+most (4.10.2-2) unstable; urgency=low
+
+  * Patch from Javier Kohen to rework (and fix) RegExp searches, so they now
+    work. Closes: #341187
+  * Patch from Javier Koehn to finally fix handling of UTF-8 data.
+    Closes: #211217
+  * Fixed typos in manpage. Closes: #307841, #335329, #338129
+  * Added mime support. Closes: #260388
+
+ -- Benjamin Mako Hill <mako@debian.org>  Mon,  5 Dec 2005 00:43:31 -0500
+
+most (4.10.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build against SLang2. Closes #322235
+
+ -- Benjamin Hill (Mako) <mako@debian.org>  Sun, 11 Sep 2005 17:54:03 -0400
+
+most (4.9.4-2) unstable; urgency=low
+
+  * Fixed typo in manpage. Closes: #205032
+  * Improved short and long descriptions: Closes: #218835, #249217
+
+ -- Benjamin Hill (Mako) <mako@debian.org>  Sun, 16 May 2004 18:39:31 -0300
+
+most (4.9.4-1) unstable; urgency=low
+
+  * New upstream release(s).
+  * Fixed handling of filenames and environment variables.
+    Closes: #170447
+  * Fixes bug for handling file with a big number of lines.
+    Closes: #179812
+  
+ -- Benjamin Hill (Mako) <mako@debian.org>  Sat,  9 Aug 2003 12:49:47 -0700
+
+most (4.9.2-3) unstable; urgency=low
+
+  * Fixes bug with long lines in wrap mode. Closes: #123008, #116147
+
+ -- Benjamin Hill (Mako) <mako@debian.org>  Mon,  8 Apr 2002 21:45:16 -0400
+
+most (4.9.2-2) unstable; urgency=low
+
+  * Fixes bugs with configuration files introduced by changes in the most
+    recent upstream versions. Closes: #112704, #110491.
+
+ -- Benjamin Hill (Mako) <mako@debian.org>  Wed,  7 Nov 2001 20:53:24 -0500
+
+most (4.9.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Fixes bug where most crashed with very long lines. Closes: #108218
+  
+ -- Benjamin Hill (Mako) <mako@debian.org>  Thu, 23 Aug 2001 17:14:30 -0400
+
+most (4.9.0-5) unstable; urgency=low
+
+  * New maintainer.
+  * Updated section to "text" in the control to reflect actual placement
+    on servers.
+  
+ -- Benjamin Hill (Mako) <mako@debian.org>  Mon, 25 Dec 2000 22:22:36 -0500
+
+most (4.9.0-4) unstable; urgency=low
+
+  * Where's the paper bag?  s/-s/-e/ in postinst.  Closes: #75122.
+
+ -- Adam Heath <doogie@debian.org>  Thu, 19 Oct 2000 00:36:03 -0500
+
+most (4.9.0-3) unstable; urgency=low
+
+  * Added Build-Depends.
+  * Added '' around the filename for popen.  Closes: #61728.
+  * Made most add itself to the pager alternative, between more and less.
+    Closes: #53418.
+
+ -- Adam Heath <doogie@debian.org>  Wed, 18 Oct 2000 10:36:56 -0500
+
+most (4.9.0-2) unstable; urgency=low
+
+  * New maintainer.
+  * Recompiled against slang1 1.3.8.  Closes: #47357, #47883
+  * Lintian 1.9.2 clean.
+  * New standards-version 3.0.1
+  * FHS compliant.
+  * Acknowledge bugs closed in previous versions.  Closes: #29892,
+    #30041
+
+ -- Adam Heath <doogie@debian.org>  Fri, 29 Oct 1999 00:26:26 -0500
+
+most (4.9.0-1.1) frozen unstable; urgency=low
+
+  * Non maintainer upload.
+  * New upstream version.
+
+ -- Dima Barsky <dima@debian.org>  Tue, 25 May 1999 14:25:15 +0000
+
+most (4.8.1-0.1) frozen unstable; urgency=low
+
+  * Non maintainer upload.
+  * New upstream version.
+  * Recompile with slang1 [#29892].
+
+ -- James Troup <james@nocrew.org>  Tue, 24 Nov 1998 20:23:41 +0000
+
+most (4.7-1.1) unstable; urgency=low
+
+  * Non-maintainer release.
+  * Libc6 compile.
+
+ -- Martin Mitchell <martin@debian.org>  Sat,  8 Nov 1997 15:38:18 +1100
+
+most (4.7-1) unstable; urgency=low
+
+  * Upgrade to new upstream source.
+  * Added Priority: optional to the control file.
+
+ -- Chris Fearnley <cjf@netaxs.com>  Mon, 23 Dec 1996 20:22:18 -0500
+
+most (4.6-1) unstable; urgency=low
+
+  * Upgrade to new upstream source.
+  * Improved extended description.
+
+ -- Chris Fearnley <cjf@netaxs.com>  Sat, 12 Oct 1996 13:11:32 -0400
+
+most (4.5.0-2) unstable; urgency=low
+
+  * Fix description (fixes bugs #2205,3620).
+  * Leaving bugs #3158 and #4456 outstanding.
+  * Apply patches from llucius <llucius@millcomm.com> for building
+    under S-Lang-0.99.3x.
+  * Upgrade to debian Standards-Version: 2.1.1.0.
+  * Upgrade to use slang0.99.34.
+
+ -- Chris Fearnley <cjf@netaxs.com>  Tue, 8 Oct 1996 12:04:51 -0400
+
+most (4.5.0-1) unstable; urgency=low
+
+  * added Debian GNU/Linux package maintenance system files
+  * ELF package
+
+ -- Chris Fearnley <cjf@netaxs.com>  Sun, 3 Dec 1995 17:24:33 -0400

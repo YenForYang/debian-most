@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Sun, 25 Dec 2016 15:02:35 -0800
+Source: most
+Binary: most
+Built-For-Profiles: nobiarch nocheck
+Architecture: amd64
+Version: 5.0.0a-4
+Distribution: unstable
+Urgency: low
+Maintainer: Benjamin Mako Hill <mako@debian.org>
+Changed-By: Benjamin Mako Hill <mako@debian.org>
+Description:
+ most       - Pager program similar to more and less
+Changes:
+ most (5.0.0a-4) unstable; urgency=low
+ .
+   * Tweaked manpage to remove macro which is invalid (and generating warnings)
+     in Debian versions of man.
+Checksums-Sha1:
+ f1ec99a3fed954492e3ce7214ec7c334f990a02e 54056 most-dbgsym_5.0.0a-4_amd64.deb
+ bedce04fc1373684ee60c9bde2508272dd254792 5461 most_5.0.0a-4_amd64.buildinfo
+ a153089c147299721231639d9b06924e428e8fd9 84640 most_5.0.0a-4_amd64.deb
+Checksums-Sha256:
+ ec6e9e7d3f637f434a4037f388090c8088cad66d5d8f6b4c29f44b038217b5a2 54056 most-dbgsym_5.0.0a-4_amd64.deb
+ f9179d473dc479292a0dacac3d1fd07d6ce87fef07c4d72a9f9e5a17e3d0c50e 5461 most_5.0.0a-4_amd64.buildinfo
+ 92d33b584df6a1d20b93959630b0769ad5a7d3a095ab4f8be1577c5db4dbed7c 84640 most_5.0.0a-4_amd64.deb
+Files:
+ f7cd69020f8f4a436ab2cf8590856720 54056 debug optional most-dbgsym_5.0.0a-4_amd64.deb
+ 7c8d0ddf756259e1dae860b8188bd4ff 5461 text optional most_5.0.0a-4_amd64.buildinfo
+ ab55bd01e245ee5bd46a367fc1c5ae28 84640 text optional most_5.0.0a-4_amd64.deb
